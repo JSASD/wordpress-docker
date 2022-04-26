@@ -29,6 +29,27 @@ To do this, just run `docker swarm init`
    - `echo P@55w0rd | docker secret creat db_password -`
 
 
+# Prepare container
+
+## Create Docker Compose File
+
+From the contents of the compose file from this repository, add and modify as you need
+
+## Create the necessary directories
+
+In the same directory as you compose file, you'll want to create a `data` directory, inside of there you'll want to create two more directories: `wordpress_data` and `db_data`.
+
+So, the directory structure in my case looks as such:
+
+```
+📦homeDir/
+├─ 📂wordpress/
+│  ├─ 📜docker-compose.yml
+│  ├─ 📂data/
+│  │  ├─ 📂wordpress_data/
+│  │  ├─ 📂db_data/
+```
+
 # Attributions
 
 [earthly.dev](https://earthly.dev/blog/docker-secrets/) for the epic help with docker secrets with WordPress
