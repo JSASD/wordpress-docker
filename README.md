@@ -26,7 +26,7 @@ To do this, just run `docker swarm init`
  - MYSQL_ROOT_PASSWORD
    - `echo P@55w0rd | docker secret create db_root_password -`
  - MYSQL_PASSWORD
-   - `echo P@55w0rd | docker secret creat db_password -`
+   - `echo P@55w0rd | docker secret create db_password -`
 
 
 # Prepare container
