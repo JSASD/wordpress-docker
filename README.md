@@ -22,7 +22,7 @@ To do this, just run `docker swarm init`
 
 
 
-# Prepare container
+# Prepare containers
 
 ## Create Docker Compose File
 
@@ -50,7 +50,10 @@ docker volume create wp_data
 # wp_data
 ```
 
-## Deploy stack
+
+# Deploy containers
+
+## Deploy using Docker Stack
 
 If you are familiar with Kubernetes (`kubectl`), this is a very similar process as a deployment.
 
@@ -63,12 +66,27 @@ docker stack deploy --compose-file=docker-compose.yml wordpress
 # Creating service wordpress_db
 ```
 
+*NOTE: After you run the deploy command, you may want to [list running containers](#list-running-containers) (and keep doing so) until all of the containers show up as running.
+
+## Update stack deployment
+
+If the `docker-compose.yml` file is updated, just run the same command from above to update the existing deployment.
+
+## Access the web server
+
+Now, you can head over to http://*serverIP*:8000, and if everyhting went ok then you should be presented with a WordPress setup page!
+
 
 # Useful Commands
 
 ## List running containers
 ```sh
 docker container ls
+```
+
+## List docker volumes
+```sh
+docker volume ls
 ```
 
 ## List deployments
